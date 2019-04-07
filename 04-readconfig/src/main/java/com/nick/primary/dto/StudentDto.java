@@ -1,4 +1,4 @@
-package com.nick.primary;
+package com.nick.primary.dto;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

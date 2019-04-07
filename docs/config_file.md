@@ -99,4 +99,88 @@ public class SomeController {
 
 ```
 
+## List<String>属性
+
+
+* custom.properties
+
+```java
+country.cities[0]=北京
+country.cities[1]=shanghai
+country.cities[2]=南京
+```
+
+* 对象 CountryDto
+
+```java
+@Data
+@Component
+@PropertySource(value = "classpath:custom.properties",encoding = "UTF-8")
+@ConfigurationProperties("country")
+public class CountryDto {
+    private List<String > cities;
+}
+```
+
+* 注入  
+
+```java
+   @Autowired
+    private CountryDto countryDto;
+
+    @GetMapping(value = "/country")
+    public CountryDto getCountry(){
+        return  countryDto;
+    }
+```
+
+
+## List<Object>
+
+
+*  custom.properties
+
+```
+group.users[0].name=zhangsan
+group.users[0].age=23
+group.users[1].name=lisi
+group.users[1].age=25
+group.users[2].name=wangwu ww
+group.users[2].age=30
+```
+
+* 对象  
+
+```java
+@Data
+@Component
+@PropertySource(value = "classpath:custom.properties",encoding = "UTF-8")
+@ConfigurationProperties("group")
+public class GroupDto {
+    List<User> users;
+}
+```
+
+```java
+@Data
+public class User {
+    private String name;
+    private int age;
+}
+
+```
+
+* 注入使用
+
+```java
+
+    @Autowired
+    private GroupDto groupDto;
+
+    @GetMapping(value = "/group")
+    public GroupDto getGroup(){
+        return  groupDto;
+    }
+```
+
 ## [完整代码](https://github.com/qiujiahong/spring-boot-demo/tree/master/04-readconfig)
