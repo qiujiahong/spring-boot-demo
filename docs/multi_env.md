@@ -74,4 +74,21 @@ public class ProMsgServiceImpl implements MsgService {
 ```
 
 
+* 添加测试控制类 
+
+```java
+@RestController
+public class MsgController {
+
+
+    @Autowired
+    MsgService msgService;
+
+    @GetMapping("/send")
+    public String sendHandle(){
+        return  msgService.send();
+    }
+}
+```
+
 ## [完整代码](https://github.com/qiujiahong/spring-boot-demo/tree/master/02-multienv)
