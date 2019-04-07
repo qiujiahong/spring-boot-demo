@@ -1,6 +1,8 @@
 package com.nick.primary.controller;
 
 
+import com.nick.primary.StudentDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +27,15 @@ public class SomeController {
     @GetMapping(value = "/city")
     public String getCity(){
         return "hello "+ cityName;
+    }
+
+
+    @Autowired
+    StudentDto studentDto;
+
+    @GetMapping(value = "/student")
+    public StudentDto getStudent(){
+        return  studentDto;
     }
 
 }
