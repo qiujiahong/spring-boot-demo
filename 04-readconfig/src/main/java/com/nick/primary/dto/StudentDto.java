@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-@PropertySource("classpath:custom.properties")
+@PropertySource(value = "classpath:custom.properties",encoding = "UTF-8")
 @ConfigurationProperties("student")
 public class StudentDto {
     private String name;

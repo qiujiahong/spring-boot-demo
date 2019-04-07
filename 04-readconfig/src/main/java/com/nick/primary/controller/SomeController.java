@@ -25,7 +25,7 @@ public class SomeController {
     public String someHandle(){
         return "hello "+ companyName;
     }
-    @GetMapping(value = "/city")
+    @GetMapping(value = "/city",produces = "application/json;charset=UTF-8")
     public String getCity(){
         return "hello "+ cityName;
     }
