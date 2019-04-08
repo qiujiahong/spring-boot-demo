@@ -7,6 +7,7 @@
 * [读取配置文件](docs/config_file.md)
 * [使用jsp页面](docs/jsp_page.md)
 * [使用mybatis](docs/mybatis.md)
+* [添加logback](docs/logback.md)
 
 
 
