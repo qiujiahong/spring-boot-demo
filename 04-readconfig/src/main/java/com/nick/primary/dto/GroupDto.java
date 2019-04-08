@@ -13,4 +13,5 @@ import java.util.List;
 @ConfigurationProperties("group")
 public class GroupDto {
     List<User> users;
+    List<Stu> stus;
 }
