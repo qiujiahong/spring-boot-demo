@@ -8,6 +8,8 @@
 * [使用jsp页面](docs/jsp_page.md)
 * [使用mybatis](docs/mybatis.md)
 * [添加logback](docs/logback.md)
+* [redis](docs/redis.md)
+
 
 
 
