@@ -60,4 +60,4 @@ public class ThymeleafController {
 
 ## [官网](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
 
-## [完整代码]()
+## [完整代码](https://github.com/qiujiahong/spring-boot-demo/tree/master/10-thymeleaf)
