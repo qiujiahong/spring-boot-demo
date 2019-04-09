@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SomeController {
 
-    @GetMapping("/frist/some")
+    @GetMapping("/first/some")
     public String firstHandle() {
         return "first";
     }
