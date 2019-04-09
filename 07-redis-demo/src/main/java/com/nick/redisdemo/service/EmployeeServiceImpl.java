@@ -20,17 +20,17 @@ public class EmployeeServiceImpl implements EmployeeService {
     EmployeeDao employeeDao;
 
     @Autowired
-    private RedisTemplate<Object,Object>   redisTemplate;
+    private RedisTemplate<Object, Object> redisTemplate;
 
-//    清理所有缓存
-    @CacheEvict(value ="realTimeCache", allEntries = true)
+    //    清理所有缓存
+    @CacheEvict(value = "realTimeCache", allEntries = true)
     @Transactional
     @Override
     public void addEmployee(Employee employee) {
         employeeDao.insertEmployee(employee);
     }
 
-    @Cacheable(value = "realTimeCache",key = "'employee_'+#id")
+    @Cacheable(value = "realTimeCache", key = "'employee_'+#id")
     @Override
     public Employee findEmployeeById(int id) {
         return employeeDao.selectEmployeeById(id);
@@ -41,16 +41,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Integer findEmployeeCount() {
 
         //获取redis操作对象
-        BoundValueOperations<Object, Object>  ops = redisTemplate.boundValueOps("count");
+        BoundValueOperations<Object, Object> ops = redisTemplate.boundValueOps("count");
         //        从缓存中读数据
         Object count = ops.get();
-        if(count == null){
-            synchronized (this){
+        if (count == null) {
+            synchronized (this) {
                 count = ops.get();
-                if(count == null){//从db中查询
+                if (count == null) {//从db中查询
                     count = employeeDao.selectEmployeeCount();
                     //将查询的数据写入到redis缓存，并设置到期时间
-                    ops.set(count,10, TimeUnit.SECONDS);
+                    ops.set(count, 10, TimeUnit.SECONDS);
                 }
             }
         }

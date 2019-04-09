@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTO Mapper 3.0/EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.nick.jspdemo.dao.EmployeeDao">
+<mapper namespace="com.nick.redisdemo.dao.EmployeeDao">
     <insert id="insertEmployee">
         insert into `employee`(`name`,`age`) values(#{name},${age})
     </insert>

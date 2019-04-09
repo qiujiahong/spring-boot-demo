@@ -25,7 +25,6 @@ public class TestController {
     @PostMapping("/find")
     @ResponseBody
     public Employee find(int id){
-
         return employeeService.findEmployeeById(id);
     }
 
@@ -33,7 +32,6 @@ public class TestController {
     @PostMapping("/count")
     @ResponseBody
     public Integer count(){
-
         return employeeService.findEmployeeCount();
     }
 }
