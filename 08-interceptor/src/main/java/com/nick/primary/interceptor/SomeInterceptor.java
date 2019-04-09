@@ -16,7 +16,7 @@ public class SomeInterceptor implements HandlerInterceptor {
     public boolean preHandle(
             HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("执行拦截器");
-        return true;//preHandle 返回true, 才会继续下面的执行.
+        return true;//preHandle 返回true, 才会继续下面的执行.返回false则拦截该页面
     }
     @Override
     public void postHandle(

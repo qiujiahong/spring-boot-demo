@@ -17,7 +17,6 @@ public class SomMvcConfig extends WebMvcConfigurationSupport {
     public void addInterceptors(InterceptorRegistry registry) {
         // 自定义拦截器，添加拦截路径和排除拦截路径
         registry.addInterceptor(someInterceptor)
-//                .addPathPatterns("/**");
                 .addPathPatterns("/first/**")
                 .excludePathPatterns("/second/**");
     }
