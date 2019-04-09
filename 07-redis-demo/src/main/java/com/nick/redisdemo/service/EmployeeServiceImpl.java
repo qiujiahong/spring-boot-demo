@@ -50,7 +50,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 if (count == null) {//从db中查询
                     count = employeeDao.selectEmployeeCount();
                     //将查询的数据写入到redis缓存，并设置到期时间
-                    ops.set(count, 10, TimeUnit.SECONDS);
+                    ops.set(count, 60, TimeUnit.SECONDS);
                 }
             }
         }

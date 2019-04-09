@@ -12,8 +12,7 @@
 </form>
 <hr>
 <form action="test/find" method="post">
-    姓名: <input type="text" name="name"> <br>
-    年龄: <input type="text" name="age"> <br>
+    id: <input type="text" name="id"> <br>
     <input type="submit" value="查询"> <br>
 </form>
 <hr>

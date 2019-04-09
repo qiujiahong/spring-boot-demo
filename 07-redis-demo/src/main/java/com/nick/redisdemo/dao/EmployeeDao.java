@@ -3,6 +3,7 @@ package com.nick.redisdemo.dao;
 
 import com.nick.redisdemo.bean.Employee;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface EmployeeDao {
@@ -11,5 +12,5 @@ public interface EmployeeDao {
 
     Integer selectEmployeeCount();
 
-    Employee selectEmployeeById(int id);
+    Employee selectEmployeeById(@Param("id")int id);
 }

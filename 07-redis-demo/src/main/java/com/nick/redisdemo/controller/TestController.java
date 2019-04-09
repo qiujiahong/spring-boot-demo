@@ -5,6 +5,7 @@ import com.nick.redisdemo.bean.Employee;
 import com.nick.redisdemo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,7 +30,7 @@ public class TestController {
     }
 
 
-    @PostMapping("/count")
+    @GetMapping("/count")
     @ResponseBody
     public Integer count(){
         return employeeService.findEmployeeCount();
