@@ -9,6 +9,7 @@
 * [使用mybatis](docs/mybatis.md)
 * [添加logback](docs/logback.md)
 * [redis](docs/redis.md)
+* [redis自动生成key](docs/redis_gen_key.md)
 * [拦截器](docs/interceptor.md)
 * [servlet](docs/servlet.md)
 
