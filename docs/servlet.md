@@ -35,3 +35,6 @@ public class Application {
 
 }
 ```
+
+
+## 配置方式
